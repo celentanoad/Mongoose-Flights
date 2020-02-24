@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mongoose Flights</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Mongoose Flights</h1>
+    <a href="/flights/new">Add New Flight</a> <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>Airline</th>
+                <th>Flight Number</th>
+                <th>Departure Airport</th>
+                <th>Departure Date/Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% flights.forEach(function(flight) { %>
+                <tr>
+                    <td> <%= flight.airline %> </td>
+                    <td> <%= flight.flightNo %> </td>
+                    <td> <%= flight.airport %> </td>
+                    <td> <%= flight.departs %> </td>
+                    <td> <a href="/flights/<%= flight._id %>">Details</a> </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+  </body>
+</html>
