@@ -6,17 +6,43 @@
   </head>
   <body>
     <h1>Flight Details</h1>
-    <section>
+    <section id="flight-details">
         <div>Airline: </div>
         <div><%= flight.airline %></div>
         <div>Origin: </div>
         <div><%= flight.airport %></div>
-        <div>Destination: </div>
-        <div><%=  %></div>
         <div>Flight Number: </div>
         <div><%= flight.flightNo %></div>
         <div>Departure Date/Time: </div>
         <div><%= flight.departs %></div>
     </section>
+    <section id="add">
+        <form action="/flights/<%= flight._id %>" method="POST">
+            <label>Airport:
+                <select name="airport">
+                    <option value="AUS">AUS</option>
+                    <option value="DFW">DFW</option>
+                    <option value="LAX">LAX</option>
+                    <option value="SFO">SFO</option>
+                    <option value="PHL">PHL</option>
+                </select>
+            </label><br><br>
+            <label>Arrival Date/Time:
+                <input type="datetime-local" name="arrival">
+            </label><br><br>
+            <button type="submit">Add Destination</button>
+        </form>
+    </section>
+    <section id="destinations">
+        <% if (flight.destinations.length) { %>
+            <% flight.destinations.forEach(function(d) { %>
+                <div> <%= d.airport %> </div>
+                <div> <%= d.arrival %> </div>
+            <% }); %>
+       <% } else { %>
+            <h5>No Destinations Listed</h5>
+       <% } %>
+    </section>
+
 </body>
 </html>
