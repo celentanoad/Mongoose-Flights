@@ -1,13 +1,65 @@
 body {
   padding: 50px;
+  background-color: lightslategray;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: darkslateblue
 }
 
 #flight-details {
+  display: grid;
+  grid-template-columns: auto auto;
   border: solid 5px lightblue;
   margin-bottom: 20px;
+  font-size: 20px;
+}
+
+#add {
+  border: solid 5px lightblue;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+button {
+  height: 30px;
+  width: 100px;
+  
+}
+
+#destinations {
+  border: solid 5px lightblue;
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-bottom: 20px;
+}
+
+th {
+  border: solid 3px lightblue;
+}
+
+.flights {
+  border-top: solid 1px lightblue;
+  border-bottom: solid 1px lightblue;
+  text-align: center;
+}
+
+form {
+  display: grid;
+}
+
+#submit-new {
+  height: 70px;
+  width: 100px;
+}
+
+input {
+  height: 30px;
+  font-size: 20px;
+}
+
+
+#flight-list {
+  font-size: 18px;
 }

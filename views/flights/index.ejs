@@ -7,7 +7,7 @@
   <body>
     <h1>Mongoose Flights</h1>
     <a href="/flights/new">Add New Flight</a> <br><br>
-    <table>
+    <table id="flight-list">
         <thead>
             <tr>
                 <th>Airline</th>
@@ -18,12 +18,12 @@
         </thead>
         <tbody>
             <% flights.forEach(function(flight) { %>
-                <tr>
-                    <td> <%= flight.airline %> </td>
-                    <td> <%= flight.flightNo %> </td>
-                    <td> <%= flight.airport %> </td>
-                    <td> <%= flight.departs %> </td>
-                    <td> <a href="/flights/<%= flight._id %>">Details</a> </td>
+                  <tr>
+                    <td class="flights"> <%= flight.airline %> </td>
+                    <td class="flights"> <%= flight.flightNo %> </td>
+                    <td class="flights"> <%= flight.airport %> </td>
+                    <td class="flights"> <%= flight.departs %> </td>
+                    <td><a href="/flights/<%= flight._id %>">Details</a></td>
                 </tr>
             <% }); %>
         </tbody>
