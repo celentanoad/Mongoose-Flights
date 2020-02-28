@@ -63,3 +63,8 @@ input {
 #flight-list {
   font-size: 18px;
 }
+
+#tickets {
+  display: grid;
+  grid-template-columns: auto auto;
+}

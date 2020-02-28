@@ -42,6 +42,15 @@
        <% } else { %>
             <h5>No Destinations Listed</h5>
        <% } %>
+    </section><br><br>
+    <a href="/flights/<%= flight._id %>/tickets/new">Add Ticket</a>
+    <section id = "tickets">
+        <% if (tickets.length) { %>
+            <% tickets.forEach(function(t) { %>
+                <div> <%=t.seat %></div>
+                <div><%=t.price %></div>
+        <%    }) %>
+       <% } %>
     </section>
     <a href="/flights">Return to all flights</a>
 </body>
